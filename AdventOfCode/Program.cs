@@ -1,6 +1,9 @@
 ﻿using AdventOfCode.Day1;
 using AdventOfCode.Day2;
+using AdventOfCode.Day3;
+using AdventOfCode.Day4;
 using System;
+using System.Linq;
 
 namespace AdventOfCode
 {
@@ -9,7 +12,9 @@ namespace AdventOfCode
         static void Main(string[] args)
         {
             //DayOne();
-            DayTwo();
+            //DayTwo();
+            //DayThree();
+            DayFour();
 
             Console.ReadLine();
         }
@@ -36,6 +41,25 @@ namespace AdventOfCode
 
             Tuple<string, string> similarIDs= dayTwo.GetTwoSimilarIDs();
             Console.WriteLine($"Similar IDs are : {similarIDs.Item1} and {similarIDs.Item2}");
+        }
+
+        private static void DayThree()
+        {
+            var dayThree = new DayThree();
+            Console.WriteLine("========= DAY THREE ========");
+            var inchesOverlapping = dayThree.CountInchesOverlapping();
+            Console.WriteLine($"Inches overlapped : {inchesOverlapping}");
+
+            var intactClaimId = dayThree.GetIntactClaimId();
+            Console.WriteLine($"Intact claim id : {intactClaimId}");
+        }
+
+        private static void DayFour()
+        {
+            var dayFour = new DayFour();
+            Console.WriteLine("========= DAY THREE ========");
+
+            dayFour.GetTop(10).ToList().ForEach(gw => Console.WriteLine(gw));
         }
     }
 }
